@@ -1,0 +1,12 @@
+.popup__errorContainer {
+  width: calc(100% - 72px);
+  position: relative;
+  margin: 0 auto 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 619px) {
+  .popup__errorContainer {
+    width: calc(100% - 44px);
+  }
+}

@@ -1,0 +1,10 @@
+.login__submit-button {
+  width: 358px;
+  margin: 216px auto 0;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.login__submit-button:hover {
+  opacity: 0.85;
+}

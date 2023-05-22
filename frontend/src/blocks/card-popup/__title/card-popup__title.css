@@ -1,0 +1,12 @@
+.card-popup__title {
+  color: #FFFFFF;
+  font-family: 'Inter', 'Helvetica', sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: -22px;
+  left: 0;
+}

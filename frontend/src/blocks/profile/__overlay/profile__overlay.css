@@ -1,0 +1,14 @@
+.profile__overlay {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.profile__overlay:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-image: url('../../../images/Vector-avatar-edit.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}

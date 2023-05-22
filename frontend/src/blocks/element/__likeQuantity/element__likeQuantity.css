@@ -1,0 +1,8 @@
+.element__likeQuantity {
+  font-family: 'Inter', 'Helvetica', sans-serif;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 400;
+  text-align: center;
+  margin: 3px 0 0;
+}
