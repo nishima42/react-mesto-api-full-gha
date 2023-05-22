@@ -18,6 +18,7 @@ const {
   requestLogger,
   errorLogger,
 } = require('./middlewares/logger');
+const { cors } = require('./middlewares/cors');
 
 const { PORT = 3000 } = process.env;
 
@@ -31,6 +32,7 @@ app.use(requestLogger);
 
 app.post('/signin', loginValidation, login);
 app.post('/signup', createUserValidation, createUser);
+app.use(cors);
 
 app.use(auth);
 
