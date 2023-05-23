@@ -100,11 +100,11 @@ class Api {
 }
 
 const api = new Api({
-    baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-59',
-    headers: {
+    baseUrl: 'api.nishima42.students.nomoredomains.monster'
+    /* headers: {
       authorization: 'da3bb534-b32f-465f-b594-c7994d501830',
       'Content-Type': 'application/json'
-    }
+    }*/ 
   });
 
 export default api;
