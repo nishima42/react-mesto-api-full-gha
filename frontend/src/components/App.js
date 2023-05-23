@@ -173,10 +173,6 @@ function App() {
     });
   }
 
-  function c(mes) {
-    console.log(mes);
-  }
-
   useEffect(() => {
     tokenCheck();
   }, [])
