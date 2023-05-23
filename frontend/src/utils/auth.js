@@ -1,6 +1,6 @@
-export const BASE_URL = 'api.nishima42.students.nomoredomains.monster';
+export const BASE_URL = 'https://api.nishima42.students.nomoredomains.monster';
 
-export const register = (password, email) => {
+export const register = (password, email) => {  
   return fetch(`${BASE_URL}/signup`, {
     method: 'POST',
     headers: {
