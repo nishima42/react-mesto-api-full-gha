@@ -12,11 +12,24 @@ class Api {
         return Promise.reject(`Ошибка: ${res.status}`);
       }
     }
+
+    getToken() {
+      const cookies = document.cookie.split(';');
+      const tokenCookie = cookies.find(cookie => cookie.trim().startsWith('token='));
+      if (tokenCookie) {
+        return tokenCookie.split('=')[1].trim();
+      }
+      return ''; // Return an empty string if token cookie is not found
+    }
+    
   
     getUserInfo() {
       return fetch(`${this._baseUrl}/users/me`, {
-        headers: this._headers,
-        //credentials: 'include'
+        headers: {
+          ...this._headers,
+          'Authorization': `Bearer ${this.getToken()}`
+        },
+        credentials: 'include'
       })
       .then(this._checkResponse)
     }
