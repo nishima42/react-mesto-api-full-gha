@@ -16,7 +16,7 @@ class Api {
     getUserInfo() {
       return fetch(`${this._baseUrl}/users/me`, {
         headers: this._headers,
-        credentials: 'include'
+        //credentials: 'include'
       })
       .then(this._checkResponse)
     }
@@ -24,7 +24,7 @@ class Api {
     getCardArray() {
       return fetch(`${this._baseUrl}/cards`, {
         headers: this._headers,
-        credentials: 'include'
+        //credentials: 'include'
       })
       .then(this._checkResponse)
     }
@@ -37,7 +37,7 @@ class Api {
           name: formData.name,
           about: formData.about
         }),
-        credentials: 'include'
+        //credentials: 'include'
       })
       .then(this._checkResponse)
     }
@@ -49,7 +49,7 @@ class Api {
         body: JSON.stringify({
           avatar: avatarLink.avatar
         }),
-        credentials: 'include'
+        //credentials: 'include'
       })
       .then(this._checkResponse)
     }
@@ -64,7 +64,7 @@ class Api {
           name: this._name,
           link: this._link
         }),
-        credentials: 'include'
+        //credentials: 'include'
       })
       .then(this._checkResponse)
     }
@@ -74,7 +74,7 @@ class Api {
       return fetch(`${this._baseUrl}/cards/${this._cardId}`, {
         method: 'DELETE',
         headers: this._headers,
-        credentials: 'include'
+        //credentials: 'include'
       })
       .then(this._checkResponse)
     }
@@ -84,7 +84,7 @@ class Api {
       return fetch(`${this._baseUrl}/cards/${this._id}/likes`, {
         method: 'PUT',
         headers: this._headers,
-        credentials: 'include'
+        //credentials: 'include'
       })
       .then(this._checkResponse)
     }
@@ -94,7 +94,7 @@ class Api {
       return fetch(`${this._baseUrl}/cards/${this._id}/likes`, {
         method: 'DELETE',
         headers: this._headers,
-        credentials: 'include'
+        //credentials: 'include'
       })
       .then(this._checkResponse)
     }
@@ -105,7 +105,7 @@ class Api {
       return fetch(`${this._baseUrl}/cards/${this._id}/likes`, {
         method: `${this._isLiked ? 'PUT' : 'DELETE'}`,
         headers: this._headers,
-        credentials: 'include'
+        //credentials: 'include'
       })
       .then(this._checkResponse)
     }
