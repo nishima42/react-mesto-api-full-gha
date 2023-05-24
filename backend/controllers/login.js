@@ -10,11 +10,13 @@ module.exports.login = (req, res) => {
 
   return User.findUserByCredentials(email, password)
     .then((user) => {
+      console.log(`there is a user ${user}`);
       const token = jwt.sign(
         { _id: user.id },
         NODE_ENV === 'production' ? JWT_SECRET : 'secret-key',
         { expiresIn: '7d' }
       );
+      console.log(token);
       res
         .cookie('jwt', token, {
           maxAge: 86400 * 7,
