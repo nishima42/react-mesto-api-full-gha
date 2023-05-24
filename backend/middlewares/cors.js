@@ -3,7 +3,7 @@ const allowedCors = [
   'http://nishima42.students.nomoredomains.monster',
   'http://51.250.21.2:3000',
   'https://51.250.21.2:3000',
-  'localhost:3000'
+  'localhost:3000',
 ];
 
 const cors = (req, res, next) => {
@@ -13,7 +13,7 @@ const cors = (req, res, next) => {
   }
 
   const { method } = req;
-  const DEFAULT_ALLOWED_METHODS = "GET,HEAD,PUT,PATCH,POST,DELETE";
+  const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 
   if (method === 'OPTIONS') {
     res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
@@ -28,4 +28,4 @@ const cors = (req, res, next) => {
 
 module.exports = {
   cors,
-}
+};
