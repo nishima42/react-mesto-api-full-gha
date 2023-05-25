@@ -14,7 +14,7 @@ const cors = (req, res, next) => {
   }
   res.header('Access-Control-Allow-Origin', origin);*/
 
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', 'https://nishima42.students.nomoredomains.monster');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   res.header('Access-Control-Allow-Credentials', 'true');
