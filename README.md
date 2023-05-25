@@ -8,7 +8,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.21.2
+IP 51.250.21.2
 
 Frontend https://nishima42.students.nomoredomains.monster
 

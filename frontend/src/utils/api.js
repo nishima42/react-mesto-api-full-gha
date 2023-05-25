@@ -147,8 +147,6 @@ class Api {
 const api = new Api({
     baseUrl: 'https://api.nishima42.students.nomoredomains.monster',
     headers: {
-      /*authorization: 'da3bb534-b32f-465f-b594-c7994d501830',*/
-      //'Accept': 'application/json',
       'Content-Type': 'application/json'
     } 
   });
