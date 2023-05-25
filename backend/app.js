@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const { errors } = require('celebrate');
-const cors = require('cors');
+const cors = require('./middlewares/cors');
 
 const router = require('./routes/index');
 const { login } = require('./controllers/login');
@@ -30,11 +30,6 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(requestLogger);
 
-const corsOptions = {
-  origin: 'https://nishima42.students.nomoredomains.monster',
-  credentials: true,
-};
-
 app.get('/crash-test', () => {
   setTimeout(() => {
     throw new Error('Сервер сейчас упадёт');
@@ -44,7 +39,7 @@ app.get('/crash-test', () => {
 app.post('/signin', loginValidation, login);
 app.post('/signup', createUserValidation, createUser);
 
-app.use(cors(corsOptions));
+app.use(cors);
 
 app.use(auth);
 
