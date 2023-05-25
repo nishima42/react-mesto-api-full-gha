@@ -39,7 +39,7 @@ class Api {
     getCardArray() {
       return fetch(`${this._baseUrl}/cards`, {
         headers: this._headers,
-        //credentials: 'include'
+        credentials: 'include'
       })
       .then(this._checkResponse)
     }

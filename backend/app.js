@@ -29,7 +29,13 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(requestLogger);
-app.use(cors());
+
+const corsOptions = {
+  origin: 'https://nishima42.students.nomoredomains.monster',
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 app.get('/crash-test', () => {
   setTimeout(() => {
