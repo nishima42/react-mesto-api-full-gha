@@ -14,14 +14,8 @@ class Api {
     }
 
     getToken() {
-      const cookies = document.cookie.split(';');
-      console.log(cookies);
-      const tokenCookie = cookies.find(cookie => cookie.trim().startsWith('token='));
-      if (tokenCookie) {
-        console.log(tokenCookie);
-        return tokenCookie.split('=')[1].trim();
-      }
-      return '';
+      const token = localStorage.getItem('token');
+      return token;
     }
     
   
