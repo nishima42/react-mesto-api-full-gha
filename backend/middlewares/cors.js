@@ -8,10 +8,11 @@ const allowedCors = [
 
 const cors = (req, res, next) => {
   const { origin } = req.headers;
-  if (allowedCors.includes(origin)) {
+  /*if (allowedCors.includes(origin)) {
     console.log('origin запроса разрешен');
     res.header('Access-Control-Allow-Origin', origin);
-  }
+  }*/
+  res.header('Access-Control-Allow-Origin', origin);
 
   const { method } = req;
   const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
