@@ -32,7 +32,10 @@ class Api {
   
     getCardArray() {
       return fetch(`${this._baseUrl}/cards`, {
-        headers: this._headers,
+        headers: {
+          ...this._headers,
+          'Authorization': `Bearer ${this.getToken()}`
+        },
         credentials: 'include'
       })
       .then(this._checkResponse)
@@ -41,12 +44,15 @@ class Api {
     patchUserInfo(formData) {
       return fetch(`${this._baseUrl}/users/me`, {
         method: 'PATCH',
-        headers: this._headers,
+        headers: {
+          ...this._headers,
+          'Authorization': `Bearer ${this.getToken()}`
+        },
         body: JSON.stringify({
           name: formData.name,
           about: formData.about
         }),
-        //credentials: 'include'
+        credentials: 'include'
       })
       .then(this._checkResponse)
     }
@@ -54,11 +60,14 @@ class Api {
     patchAvatar(avatarLink) {
       return fetch(`${this._baseUrl}/users/me/avatar`, {
         method: 'PATCH',
-        headers: this._headers,
+        headers: {
+          ...this._headers,
+          'Authorization': `Bearer ${this.getToken()}`
+        },
         body: JSON.stringify({
           avatar: avatarLink.avatar
         }),
-        //credentials: 'include'
+        credentials: 'include'
       })
       .then(this._checkResponse)
     }
@@ -68,12 +77,15 @@ class Api {
       this._link = link;
       return fetch(`${this._baseUrl}/cards`, {
         method: 'POST',
-        headers: this._headers,
+        headers: {
+          ...this._headers,
+          'Authorization': `Bearer ${this.getToken()}`
+        },
         body: JSON.stringify({
           name: this._name,
           link: this._link
         }),
-        //credentials: 'include'
+        credentials: 'include'
       })
       .then(this._checkResponse)
     }
@@ -82,8 +94,11 @@ class Api {
       this._cardId = cardId;
       return fetch(`${this._baseUrl}/cards/${this._cardId}`, {
         method: 'DELETE',
-        headers: this._headers,
-        //credentials: 'include'
+        headers: {
+          ...this._headers,
+          'Authorization': `Bearer ${this.getToken()}`
+        },
+        credentials: 'include'
       })
       .then(this._checkResponse)
     }
@@ -92,8 +107,11 @@ class Api {
       this._id = id;
       return fetch(`${this._baseUrl}/cards/${this._id}/likes`, {
         method: 'PUT',
-        headers: this._headers,
-        //credentials: 'include'
+        headers: {
+          ...this._headers,
+          'Authorization': `Bearer ${this.getToken()}`
+        },
+        credentials: 'include'
       })
       .then(this._checkResponse)
     }
@@ -102,8 +120,11 @@ class Api {
       this._id = id;
       return fetch(`${this._baseUrl}/cards/${this._id}/likes`, {
         method: 'DELETE',
-        headers: this._headers,
-        //credentials: 'include'
+        headers: {
+          ...this._headers,
+          'Authorization': `Bearer ${this.getToken()}`
+        },
+        credentials: 'include'
       })
       .then(this._checkResponse)
     }
@@ -113,8 +134,11 @@ class Api {
       this._isLiked = isLiked;
       return fetch(`${this._baseUrl}/cards/${this._id}/likes`, {
         method: `${this._isLiked ? 'PUT' : 'DELETE'}`,
-        headers: this._headers,
-        //credentials: 'include'
+        headers: {
+          ...this._headers,
+          'Authorization': `Bearer ${this.getToken()}`
+        },
+        credentials: 'include'
       })
       .then(this._checkResponse)
     }
