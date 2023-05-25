@@ -7,28 +7,37 @@ const allowedCors = [
 ];
 
 const cors = (req, res, next) => {
-  const { origin } = req.headers;
-  /*if (allowedCors.includes(origin)) {
+  /*const { origin } = req.headers;
+  if (allowedCors.includes(origin)) {
     console.log('origin запроса разрешен');
     res.header('Access-Control-Allow-Origin', origin);
-  }*/
-  res.header('Access-Control-Allow-Origin', origin);
+  }
+  res.header('Access-Control-Allow-Origin', origin);*/
+
+  res.setHeader('Access-Control-Allow-Origin', 'https://nishima42.students.nomoredomains.monster'); // Замените * на нужный вам источник, например, 'https://nishima42.students.nomoredomains.monster'
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
   const { method } = req;
   const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 
-  if (method === 'OPTIONS') {
+  /*if (method === 'OPTIONS') {
     console.log('предварительый запрос');
     res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
     /*const requestHeaders = req.headers['access-control-request-headers'];
-    res.header('Access-Control-Allow-Headers', requestHeaders);*/
+    res.header('Access-Control-Allow-Headers', requestHeaders);
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     res.header('Access-Control-Allow-Credentials', 'true');
 
     return res.end();
+  }*/
+
+  if (req.method === 'OPTIONS') {
+    res.sendStatus(200);
+  } else {
+    next();
   }
 
-  next();
 };
 
 module.exports = {
