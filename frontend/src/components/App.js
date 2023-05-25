@@ -193,7 +193,8 @@ function App() {
     if(loggedIn) {
       api.getCardArray()
       .then((cardArray) => {
-        setCards(cardArray);
+        //setCards(cardArray);
+        console.log(cardArray);
       })
       .catch((err) => {
         console.log(err); 
