@@ -29,6 +29,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(requestLogger);
+app.use(cors);
 
 app.get('/crash-test', () => {
   setTimeout(() => {
@@ -38,8 +39,6 @@ app.get('/crash-test', () => {
 
 app.post('/signin', loginValidation, login);
 app.post('/signup', createUserValidation, createUser);
-
-app.use(cors);
 
 app.use(auth);
 
