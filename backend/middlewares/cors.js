@@ -20,8 +20,10 @@ const cors = (req, res, next) => {
   if (method === 'OPTIONS') {
     console.log('предварительый запрос');
     res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
-    const requestHeaders = req.headers['access-control-request-headers'];
-    res.header('Access-Control-Allow-Headers', requestHeaders);
+    /*const requestHeaders = req.headers['access-control-request-headers'];
+    res.header('Access-Control-Allow-Headers', requestHeaders);*/
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.header('Access-Control-Allow-Credentials', 'true');
 
     return res.end();
   }
