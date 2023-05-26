@@ -50,6 +50,7 @@ function App() {
     auth.authorize(password, email)
     .then((data) => {
       if(data.token) {
+        localStorage.setItem('token', data.token);
         setLoggedIn(true);
         setUserEmail(email);
         navigate('/', {replace: true});
@@ -68,6 +69,7 @@ function App() {
   }
 
   function handleLogOut() {
+    localStorage.removeItem('token');
     setLoggedIn(false);
   }
 
