@@ -80,7 +80,7 @@ function App() {
         if(res) {
           console.log(res);
           setLoggedIn(true);
-          setUserEmail(res.data.email)
+          setUserEmail(res.email)
           navigate('/', {replace: true});
         }
       })
