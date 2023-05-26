@@ -50,7 +50,6 @@ function App() {
     auth.authorize(password, email)
     .then((data) => {
       if(data.token) {
-        localStorage.setItem('token', data.token);
         setLoggedIn(true);
         setUserEmail(email);
         navigate('/', {replace: true});
@@ -79,6 +78,7 @@ function App() {
       auth.getContent(token)
       .then((res) => {
         if(res) {
+          console.log(res);
           setLoggedIn(true);
           setUserEmail(res.data.email)
           navigate('/', {replace: true});
